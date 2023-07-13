@@ -282,16 +282,24 @@ class Scanner
     {
         if (is_array($data) || is_object($data)) {
             if ($this->log) {
-                echo "Scanner:" . PHP_EOL;
+                echo "[" . $this->timestamp() . "] Scanner:" . PHP_EOL;
                 print_r($data);
             }
         } else {
             if ($this->log) {
-                echo "Scanner: " . $data . PHP_EOL;
+                echo "[" . $this->timestamp() . "] Scanner: " . $data . PHP_EOL;
             }
-            $this->results['logs'][] = "Scanner: " . $data;
+            $this->results['logs'][] = "[" . $this->timestamp() . "] Scanner: " . $data;
         }
 
         return true;
+    }
+
+    /**
+     * Returns the current timestamp
+     */
+    private function timestamp(): string
+    {
+        return date('Y-m-d H:i:s');
     }
 }
