@@ -1,6 +1,6 @@
 # ClamAV Test
 
-This is a test project for using ClamAV with Github.
+This is a test project for using ClamAV
 
 ## Installing
 
